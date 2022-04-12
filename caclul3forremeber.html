@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <div class="conainer-fluid">
+          <div class="calculatrice">
+          <div id="ecron"class="text-light"></div>
+          <button id="deliteAll">AC</button>
+          <button id="delite">DEL</button>
+          <button class="btnscalcul">+</button>
+          <button class="btnscalcul">1</button>
+          <button class="btnscalcul">2</button>
+          <button class="btnscalcul">3</button>
+          <button class="btnscalcul">-</button>
+          <button class="btnscalcul">4</button>
+          <button class="btnscalcul">5</button>
+          <button class="btnscalcul">6</button>
+          <button class="btnscalcul">*</button>
+          <button class="btnscalcul">7</button>
+          <button class="btnscalcul">8</button>
+          <button class="btnscalcul">9</button>
+          <button class="btnscalcul">/</button>
+          <button id="vrgul">,</button>
+          <button class="btnscalcul">0</button>
+
+          <button id="egal">=</button>
+      </div>
+      </div>
+      <style>
+        .conainer-fluid{background-image: url("https://image.shutterstock.com/image-vector/education-vector-seamless-pattern-math-260nw-1296108280.jpg");
+      background-size: cover;
+    background-repeat: no-repeat;}
+      
+        .calculatrice{justify-content: center;
+        text-align: center;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(4,100px);
+        grid-template-rows:minmax(100px,auto)repeat(5,100px);
+        
+        margin: 5px ;
+      }
+        .calculatrice > button{background-color: rgba(255, 228, 196, 0.548);
+          outline: none;border: 1px solid black;font-size: 2em;}
+          .calculatrice > button:hover{background-color: wheat;}
+        #ecron{background-color: black;
+            display: grid;
+            grid-column: span 4;
+            min-height: 150px;max-height: auto;
+        display: flex; 
+        justify-content: end; align-items: flex-end;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+          
+        #egal{grid-column: span 2;}
+        #deliteAll{grid-column: span 2;}
+</style>
+<script>
+var btns=document.getElementsByClassName("btnscalcul");
+var espace= document.getElementById("ecron");
+var egalité=document.getElementById("egal");
+var vrgl=document.getElementById("vrgul");
+var AC=document.getElementById("deliteAll");
+var DEL=document.getElementById("delite");
+var put="";
+var resultat=[];
+//bch n5arjou num fi ecran
+for (let i=0 ; i<btns.length ; i++){btns[i].addEventListener("click", function() {
+  
+let btn=btns[i].innerHTML;
+put+=btn ;
+espace.innerHTML=put;}
+)
+}
+//bch tfare4 l ecran
+AC.addEventListener("click",function()
+{put="";
+espace.innerHTML=put;});
+// bvh tase5 num
+DEL.addEventListener("click" , function()
+{put=put.slice(0 , put.length-1);
+espace.innerHTML=put;})
+vrgl.addEventListener("click",function(){
+  if(!(put.includes(","))&& !(put==="")){put+=vrgl.innerHTML;
+  espace.innerHTML=put}
+  else if (put.includes("+")||put.includes("-")||put.includes("/")||put.includes("*"))
+  {put+=vrgl.innerHTML
+
+  espace.innerHTML=put}
+})
+egalité.addEventListener("click", function(){
+resultat.push(put);
+put = eval(resultat.join("")) ;
+espace.innerHTML=put;
+resultat=[];
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+   
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
